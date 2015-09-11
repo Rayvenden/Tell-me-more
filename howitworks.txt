@@ -9,7 +9,7 @@ Trishna Guha
 python3 main.py --whoami works as "whoami" command.
 This displays the current user who is logged in the system
 
-python3 main.py --whoami / python3 main.py -wa
+python3 main.py --whoami / python3 main.py -i
 trishna
 
 python3 main.py --mem provides the information about total memory, available memory and free memory of the system.

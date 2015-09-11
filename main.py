@@ -35,7 +35,7 @@ def main():
 
     group = parser.add_mutually_exclusive_group()
     group.add_argument("-u", "--users", help = "All system users", action = "store_true")
-    group.add_argument("-wa", "--whoami", help = "Current user who is logged in", action = "store_true")
+    group.add_argument("-i", "--whoami", help = "Current user who is logged in", action = "store_true")
     group.add_argument("-m", "--mem", help = "Details of memory of the system", action = "store_true")
     
     args = parser.parse_args()
