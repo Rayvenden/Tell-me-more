@@ -1,20 +1,20 @@
 Demo of Tell-me-more
 
-python3 main.py --bash displays the bash users of the system.
+python3 main.py --users displays the users of the system.
 
-python3 main.py --bash
+python3 main.py --users / python3 main.py -u
 root
 Trishna Guha
 
-python3 main.py --whoam works as "whoami" command.
+python3 main.py --whoami works as "whoami" command.
 This displays the current user who is logged in the system
 
-python3 main.py --whoam
+python3 main.py --whoami / python3 main.py -wa
 trishna
 
 python3 main.py --mem provides the information about total memory, available memory and free memory of the system.
 
-python3 main.py --mem
+python3 main.py --mem / python3 main.py -m
 MemTotal: 3846 MB
 MemFree: 2207 MB
 MemAvailable: 2874 MB
