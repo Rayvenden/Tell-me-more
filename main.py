@@ -20,7 +20,7 @@ def whoami():
     print("%s" % (os.getlogin()))
 
 def memory_details():
-    with open('/proc/meminfo') as fobj:
+    with open('/proc/meminfo', 'r') as fobj:
         f = fobj.readlines()
         pattern = '^Mem'
 
@@ -49,7 +49,7 @@ def main():
     elif args.mem:
         return memory_details()
     else:
-        print("Error: provide argument to get output") 
+        print("Error: provide an argument to get output") 
 
 if __name__ == '__main__':
     main() 
