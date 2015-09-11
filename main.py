@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import re
 import os
 import argparse
@@ -49,7 +47,7 @@ def main():
     elif args.mem:
         return memory_details()
     else:
-        print("Error: provide an argument to get output") 
+        raise argparse.ArgumentTypeError(" Provide an optional argument to get output")
 
 if __name__ == '__main__':
     main() 
