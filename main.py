@@ -2,10 +2,10 @@ import re
 import os
 import argparse
 
-def users():
+def bash_users():
     with open('/etc/passwd', 'r') as fobj:
         f = fobj.readlines()
-        pattern = '/bin/bash'
+        pattern = '/bash'
 
         for i in f:
             m = re.search(pattern, i)
@@ -13,6 +13,18 @@ def users():
                 print("%s" % i.split(':')[4])
             else:
                 pass
+
+def no_bash_users():
+    with open('/etc/passwd', 'r') as fobj:
+        f = fobj.readlines()
+        pattern = '/nologin|/bash'
+
+        for i in f:
+            m = re.search(pattern, i)
+            if m:
+                pass
+            else:
+                print("%s" % (i.split(':')[4]))
 
 def whoami():
     print("%s" % (os.getlogin()))
@@ -37,11 +49,14 @@ def main():
     group.add_argument("-u", "--users", help = "All system users", action = "store_true")
     group.add_argument("-i", "--whoami", help = "Current user who is logged in", action = "store_true")
     group.add_argument("-m", "--mem", help = "Details of memory of the system", action = "store_true")
-    
+    group.add_argument("-n", "--nbusers", help = "Users who are not using bash, excluding the accounts with the nologin shell", action = "store_true")
+
     args = parser.parse_args()
 
     if args.users:
-        return users()
+        return bash_users()
+    elif args.nbusers:
+        return no_bash_users()
     elif args.whoami:
         return whoami()
     elif args.mem:
